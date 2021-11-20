@@ -1,0 +1,21 @@
+﻿@model IEnumerable<PineappleSupermarket.Models.Product>
+
+@foreach (var item in Model)
+{
+
+    <div class="photo-index">
+        <h3>"@item.Name"</h3>
+
+        @if (item.Picture != null)
+        {
+            <img class="photo-index-img" src="@Url.Action("GetImage", "Product", new { id = item.ProductId })" />
+        }
+
+        <div class="photo">
+
+
+        </div>
+
+
+    </div>
+}

@@ -1,0 +1,50 @@
+﻿@model PineappleSupermarket.Models.Product
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<body>
+
+    @if (Model.Picture != null)
+    {
+        <div class="picture-display">
+            <img width="800" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
+        </div>
+    }
+    @using (Html.BeginForm("Edit", "Product", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.ProductId)
+        <div>
+            @Html.LabelFor(model => model.Name)
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.ProductCategory)
+            @Html.EditorFor(model => model.ProductCategory)
+            @Html.ValidationMessageFor(model => model.ProductCategory)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Description)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.Quantity)
+            @Html.EditorFor(model => model.Quantity)
+            @Html.ValidationMessageFor(model => model.Quantity)
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.UnitPrice)
+            @Html.EditorFor(model => model.UnitPrice)
+            @Html.ValidationMessageFor(model => model.UnitPrice)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    }
+    @Html.ActionLink("Index", "Index", "Product")
+</body>

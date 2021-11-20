@@ -1,0 +1,45 @@
+﻿@model PineappleSupermarket.Models.Product
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+
+<body>
+    <fieldset>
+        <legend>Product Detail</legend>
+        <div class="display">
+            <img width="800" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
+            <p><b>@Html.DisplayNameFor(model => model.ProductId):</b> @Html.DisplayFor(model => model.ProductId)</p>
+        </div>
+
+        <div class="display">
+            <p><b>@Html.DisplayNameFor(model => model.Name):</b> @Html.DisplayFor(model => model.Name)</p>
+        </div>
+
+        <div class="display">
+            <p><b>@Html.DisplayNameFor(model => model.ProductCategory):</b> @Html.DisplayFor(model => model.ProductCategory)</p>
+        </div>
+
+        <div class="display">
+            <p><b> @Html.DisplayNameFor(model => model.Description):</b> @Html.DisplayFor(model => model.Description)</p>
+        </div>
+
+        <div class="display">
+            <p><b>@Html.DisplayNameFor(model => model.Quantity):</b> @Html.DisplayFor(model => model.Quantity)</p>
+        </div>
+        
+        <div class="display">
+            <p><b>@Html.DisplayNameFor(model => model.UnitPrice):</b> @Html.DisplayFor(model => model.UnitPrice)</p>
+        </div> 
+        
+        <div class="display">
+            <p><b>@Html.DisplayNameFor(model => model.Picture):</b> @Html.DisplayFor(model => model.Picture)</p>
+        </div>
+
+    </fieldset>
+    <p>
+        @Html.ActionLink("Volver a Index", "Index", "Product")
+    </p>
+
+</body>

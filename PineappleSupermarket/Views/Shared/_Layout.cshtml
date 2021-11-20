@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <section id="header">
+            <h1></h1>
+        </section>
+
+    </header>
+
+    <nav id="topmenu">
+        <ul>
+            <li><a href="#"></a>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li><a href="#"></a>@Html.ActionLink("Products", "Index", "Product")</li>
+        </ul>
+    </nav>
+
+    <main>
+        @RenderBody()
+        <aside id="izq">
+        </aside>
+        <article>
+        </article>
+
+    </main>
+    <footer></footer>
+</body>
+</html>
