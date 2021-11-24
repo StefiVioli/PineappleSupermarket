@@ -1,0 +1,67 @@
+﻿@model PineappleSupermarket.Models.User
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create New User</title>
+</head>
+<body>
+    <div>
+        <h2>Create New User</h2>
+
+        @using (Html.BeginForm("Create", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+
+            <p>
+                @Html.LabelFor(model => model.Username):
+                @Html.EditorFor(model => model.Username)
+                @Html.ValidationMessageFor(model => model.Username)
+            </p>
+
+            <p>
+                @Html.LabelFor(model => model.Password):
+                @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)
+            </p>
+
+            <p>
+                @Html.LabelFor(model => model.Email):
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email)
+            </p>
+
+            <p>
+                @Html.LabelFor(model => model.Name):
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name)
+            </p>
+
+            <p>
+                @Html.LabelFor(model => model.LastName):
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </p>
+            <p>
+                @Html.LabelFor(model => model.Role):
+                @Html.EditorFor(model => model.Role)
+                @Html.ValidationMessageFor(model => model.Role)
+            </p>
+            <p>
+
+                @Html.LabelFor(model => model.CreatedDate):
+                @Html.DisplayFor(model => model.CreatedDate)
+                @Html.ValidationMessageFor(model => model.CreatedDate)
+            </p>
+            <p>
+
+                <input type="submit" value="Create" />
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        }
+    </div>
+</body>
+</html>
