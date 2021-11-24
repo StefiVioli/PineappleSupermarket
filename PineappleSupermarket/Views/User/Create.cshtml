@@ -1,5 +1,8 @@
 ﻿@model PineappleSupermarket.Models.User
 
+@{
+    ViewBag.Title = "Create";
+}
 
 <!DOCTYPE html>
 
@@ -50,12 +53,11 @@
                 @Html.EditorFor(model => model.Role)
                 @Html.ValidationMessageFor(model => model.Role)
             </p>
-            <p>
-
-                @Html.LabelFor(model => model.CreatedDate):
-                @Html.DisplayFor(model => model.CreatedDate)
+            @*<p>
+                @Html.LabelFor(model => model.CreatedDate)
+                @Html.EditorFor(model => model.CreatedDate)
                 @Html.ValidationMessageFor(model => model.CreatedDate)
-            </p>
+            </p>*@
             <p>
 
                 <input type="submit" value="Create" />

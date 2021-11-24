@@ -16,9 +16,29 @@ namespace PineappleSupermarket.Controllers
 
         public ActionResult Index()
         {
-            
+
             var products = context.Products.ToList();
             return View("Index", products);
+            //return View("Index");
+        }
+
+        [ChildActionOnly]
+        public ActionResult _PhotoGallery(int number = 0)
+        {
+            List<Product> products;
+
+            if (number == 0)
+            {
+                products = context.Products.ToList();
+            }
+            else
+            {
+                products = (from p in context.Products
+                          orderby p.Name descending
+                          select p).Take(number).ToList();
+            }
+
+            return PartialView("_PhotoGallery", products);
         }
 
         [HttpGet]
@@ -30,16 +50,31 @@ namespace PineappleSupermarket.Controllers
 
 
         [HttpPost]
-        public ActionResult Create(Product product)
+       
+        public ActionResult Create(Product product, HttpPostedFileBase image)
         {
-            if (ModelState.IsValid)
+           
+            if (!ModelState.IsValid)
             {
-                context.Products.Add(product);
-                context.SaveChanges();
-                return RedirectToAction("Index");
+                return View("Create", product);
+            }
+            else
+            {
+                if (image != null)
+                {
+                    product.ImageMimeType =
+                    image.ContentType;
+                    product.Picture = new
+                    byte[image.ContentLength];
+                    image.InputStream.Read(
+                    product.Picture, 0,
+                    image.ContentLength);
+                }
             }
 
-            return View("Create", product);
+            context.Products.Add(product);
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -133,6 +168,21 @@ namespace PineappleSupermarket.Controllers
             }
 
             return View("Edit", product);
+
+        }
+
+        public FileContentResult GetImage(int id)
+        {
+            Product product = context.Products.Find(id);
+            if (product != null)
+            {
+                return File(product.Picture,
+                product.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
 
         }
 

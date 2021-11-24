@@ -9,7 +9,7 @@
     <fieldset>
         <legend>Product Detail</legend>
         <div class="display">
-            <img width="800" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
+            <img width="200" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
             <p><b>@Html.DisplayNameFor(model => model.ProductId):</b> @Html.DisplayFor(model => model.ProductId)</p>
         </div>
 
@@ -33,9 +33,9 @@
             <p><b>@Html.DisplayNameFor(model => model.UnitPrice):</b> @Html.DisplayFor(model => model.UnitPrice)</p>
         </div> 
         
-        <div class="display">
+        @*<div class="display">
             <p><b>@Html.DisplayNameFor(model => model.Picture):</b> @Html.DisplayFor(model => model.Picture)</p>
-        </div>
+        </div>*@
 
     </fieldset>
     <p>

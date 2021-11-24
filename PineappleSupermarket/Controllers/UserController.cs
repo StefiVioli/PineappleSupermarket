@@ -27,6 +27,7 @@ namespace PineappleSupermarket.Controllers
         public ActionResult Create()
         {
             User user = new User();
+            user.CreatedDate = DateTime.Today;
             return View("Create", user);
         }
 
@@ -34,6 +35,7 @@ namespace PineappleSupermarket.Controllers
         [HttpPost]
         public ActionResult Create(User user)
         {
+                user.CreatedDate = DateTime.Today;
             if (ModelState.IsValid)
             {
                 context.Users.Add(user);
