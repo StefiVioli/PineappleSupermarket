@@ -10,7 +10,7 @@
         <legend>Product Detail</legend>
         <div class="display">
             <img width="200" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
-            <p><b>@Html.DisplayNameFor(model => model.ProductId):</b> @Html.DisplayFor(model => model.ProductId)</p>
+            @*<p><b>@Html.DisplayNameFor(model => model.ProductId):</b> @Html.DisplayFor(model => model.ProductId)</p>*@
         </div>
 
         <div class="display">
@@ -39,7 +39,7 @@
 
     </fieldset>
     <p>
-        @Html.ActionLink("Volver a Index", "Index", "Product")
+        @Html.ActionLink("Back to list", "Index", "Product")
     </p>
 
 </body>

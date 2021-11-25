@@ -1,1 +1,110 @@
-﻿
+﻿* {
+    margin: 2px;
+    font-family: Calibri;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+#header {
+/*    background-color: black;*/
+    color: white;
+    padding: 2px;
+    text-align: center;
+    font-family: Calibri;
+    font-size: 60px;
+}
+
+nav {
+    background-color: mediumaquamarine;
+    color: white;
+    text-align: center;
+    font-family: Calibri;
+    font-size: 30px;
+}
+
+li a {
+    color: azure;
+}
+
+
+#izq {
+    background-color: black;
+    margin: 2px;
+    color: white;
+    /* padding: 250px;*/
+    float: left;
+}
+
+article {
+    background-color: aquamarine;
+    float: left;
+    width: 60%;
+    padding: 6px;
+    margin: 2px;
+}
+
+footer {
+    clear: both;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: Calibri;
+}
+
+h2 {
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    width: 10%;
+    padding: 5px 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border: 1px solid teal;
+    text-align: center;
+    color: #fff;
+}
+
+    nav li:hover {
+        background-color: teal;
+        color: inherit;
+    }
+
+h1 {
+    padding: 5px;
+}
+
+.display {
+    padding: 5px;
+    font-family: Calibri;
+    font-size: 17px;
+}
+
+.displaybuscar {
+    padding: 9px;
+    font-family: Calibri;
+    font-size: 17px;
+    margin-top: 9px;
+    margin-left: 200px;
+}
+
+table {
+    padding: 100px;
+    font-family: Calibri;
+    text-align: center;
+    font-size: 17px;
+    text-align:center;
+}
+
+.int {
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    list-style-type: disc;
+    list-style: disc;
+    margin: 0;
+    padding: 0;
+}

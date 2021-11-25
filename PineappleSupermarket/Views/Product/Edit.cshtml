@@ -9,7 +9,7 @@
     @if (Model.Picture != null)
     {
         <div class="picture-display">
-            <img width="800" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
+            <img width="200" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
         </div>
     }
     @using (Html.BeginForm("Edit", "Product", FormMethod.Post))
@@ -46,5 +46,5 @@
             <input type="submit" value="Save" />
         </p>
     }
-    @Html.ActionLink("Index", "Index", "Product")
 </body>
+    @Html.ActionLink("Back to list", "Index", "Product")

@@ -22,12 +22,13 @@
             @Html.DisplayFor(model => model.Id)
         </div>*@
 
-    <div class="picture-display">
-        <img width="200" src="@Url.Action("GetImage", "Picture", new { id = Model.ProductId })" />
-    </div>
-    <div class="display">
+<div class="picture-display">
+    @*<img width="200" src="@Url.Action("GetImage", "Picture", new { id = Model.ProductId })" />*@
+    <img width="200" src="@Url.Action("GetImage", "Product", new { id = Model.ProductId })" />
+</div>
+    @*<div class="display">
         <p> <b>@Html.DisplayNameFor(model => model.ProductId):</b> @Html.DisplayFor(model => model.ProductId)</p>
-    </div>
+    </div>*@
 
     <div class="display">
         <p> <b>@Html.DisplayNameFor(model => model.Name):</b> @Html.DisplayFor(model => model.Name)</p>
@@ -55,6 +56,6 @@
         </p>
     }
     <p>
-        @Html.ActionLink("Index", "Index", "Product")
+        @Html.ActionLink("Back to list", "Index", "Product")
     </p>
 </body>
